@@ -53,10 +53,10 @@ pip install torchvision==0.8.2
 
 ## Usage
 
-For any nucleic acid-ligand complex structure, you could run:
+For any nucleic acid-ligand complex structure (single or multiple inputs), you could run:
 
 ```
-bash run_ZHmol-LigGraph.sh # Single or multiple inputs
+bash run_ZHmol-LigGraph.sh
 ```
 
 

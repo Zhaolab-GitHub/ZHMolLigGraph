@@ -1,4 +1,4 @@
-name: ZHmol-LigGraph
+name: ZHMolLigGraph
 channels:
   - defaults
 dependencies:

@@ -1,6 +1,6 @@
-# [ZHmol-LigGraph](http://zhaoserver.com.cn/ZHmol-LigGraph/ZHmol-LigGraph.html)
+# [ZHMolLigGraphh](http://zhaoserver.com.cn/ZHmol-LigGraph/ZHmol-LigGraph.html)
 
-## Overview of ZHmol-LigGraph: 
+## Overview of ZHMolLigGraph: 
 ZHmol-LigGraph is a method that exploring ligand flexibility in nucleic acid scaffolds using graph neural networks 
 
 **We also provide an online calculation server for convenient use:** 
@@ -25,8 +25,8 @@ conda activate ZHmol-LigGraph
 
 (2) Or you could also create a new conda environment as follows:
 ```
-conda create -n ZHmol-LigGraph python=3.8.18
-conda activate ZHmol-LigGraph
+conda create -n ZHMolLigGraph python=3.8.18
+conda activate ZHMolLigGraph
 ```
 
 ```
@@ -66,6 +66,6 @@ Results are saved in data/after_dock/ as:
 * .txt file (the probability to accept/reject decision (0-1))
 
 ## Contact
-If you have any comments, questions or suggestions about the ZHmol-LigGraph, please contact:  
+If you have any comments, questions or suggestions about the ZHMolLigGraph, please contact:  
 Yunjie Zhao; E-mail: yjzhaowh@ccnu.edu.cn  
 Chengwei Zeng; E-mail: cwzengwuhan@mails.ccnu.edu.cn

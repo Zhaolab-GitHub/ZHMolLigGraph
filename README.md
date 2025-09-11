@@ -50,8 +50,11 @@ pip install torchvision==0.8.2
 * Pretrained Models​​: Download prediction_model.pt and selection_model.pt from [Zenodo](https://zenodo.org/records/15519001) and place them in models/ directory.
 
 ## Usage
-Examples have been put in data/ directory.  
-For any nucleic acid-ligand complex structure (single or multiple inputs), you could run:
+Example files are provided in the data/ directory.
+
+For any nucleic acid-ligand complex structure (single or multiple inputs), place the nucleic acid file as native/XX.rec.pdb, the ligand file as native/XX.lig.mol2, and the complex file as before_dock/XX.pdb.
+
+Then, simply run the following command:
 
 ```
 bash run_ZHmol-LigGraph.sh

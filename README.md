@@ -50,7 +50,7 @@ pip install torchvision==0.8.2
 * Pretrained Models​​: Download prediction_model.pt and selection_model.pt from [Zenodo](https://zenodo.org/records/15519001) and place them in models/ directory.
 
 ## Usage
-
+Examples have been put in data/ directory.
 For any nucleic acid-ligand complex structure (single or multiple inputs), you could run:
 
 ```

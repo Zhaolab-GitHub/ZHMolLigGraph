@@ -1,7 +1,7 @@
 # [ZHMolLigGraphh](http://zhaoserver.com.cn/ZHmol-LigGraph/ZHmol-LigGraph.html)
 
 ## Overview of ZHMolLigGraph: 
-**exploring ligand flexibility in nucleic acid scaffolds using graph neural networks** 
+**Exploring ligand flexibility in nucleic acid scaffolds using graph neural networks** 
 
 **We also provide an online calculation server for convenient use:** 
 [Click to access the online server](http://zhaoserver.com.cn/ZHMolLigGraph/ZHMolLigGraph.html)

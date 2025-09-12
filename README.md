@@ -20,7 +20,7 @@ Follow these steps to set up your environment. We have successfully tested this 
 (1) Quick Install
 ```
 conda env create -f environment.yml
-conda activate ZHmol-LigGraph
+conda activate ZHMolLigGraph
 ```
 
 (2) Or you could also create a new conda environment as follows:

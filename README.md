@@ -46,8 +46,8 @@ pip install torchvision==0.8.2
 ```
 
 ## Data & Pretrained Models
-* Data Files​​: Available at at [Zenodo](https://zenodo.org/records/15519001)
-* Pretrained Models​​: Download prediction_model.pt and selection_model.pt from [Zenodo](https://zenodo.org/records/15519001) and place them in models/ directory.
+* Data Files​​: Available at at [Zenodo](https://zenodo.org/records/17097553)
+* Pretrained Models​​: Download prediction_model.pt and selection_model.pt from [Zenodo](https://zenodo.org/records/17097553) and place them in models/ directory.
 
 ## Usage
 Example files are provided in the data/ directory.

@@ -46,7 +46,6 @@ class PDBBindCoor(InMemoryDataset):
         return ['train.pt', 'test.pt']
 
     def download(self):
-        print('Hello Download')
         pass
 
     def process(self):
@@ -66,7 +65,7 @@ class PDBBindCoor(InMemoryDataset):
 
             pbar = tqdm(total=files_num)
             pbar.set_description(f'Processing {split} dataset')
-            print(f'dataset_dir: {dataset_dir}')
+            #print(f'dataset_dir: {dataset_dir}')
         
             for f in range(files_num):
 
@@ -158,7 +157,6 @@ class PDBBindNextStep2(InMemoryDataset):
         return ['train.pt', 'test.pt']
 
     def download(self):
-        print('Hello Download')
         pass
 
     @torch.no_grad()
@@ -166,7 +164,7 @@ class PDBBindNextStep2(InMemoryDataset):
         for split in [self.split]:
             pre_dataset = PDBBindCoor(root=self.pre_root, split=split)
             pre_loader=DataLoader(pre_dataset, batch_size=1)
-            model = torch.load(self.model_dir).to(self.device)
+            model = torch.load(self.model_dir, map_location=self.device).to(self.device)
             model.eval()
 
             pbar = tqdm(total=len(pre_dataset))

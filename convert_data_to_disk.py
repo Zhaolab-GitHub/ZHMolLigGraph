@@ -43,7 +43,7 @@ def srand_data_load_save_coord2_thread(input_list, groundtruth_dir, pdbbind_dir,
     if args.dataset == 'coor2':
         import coordinate_data2 as cd2
         splits = ['train', 'test']
-        print("import coordinate_data2")
+        #print("import coordinate_data2")
 
     for split in splits:
         input_list_filename = input_list + split
@@ -64,7 +64,7 @@ def srand_data_load_save_coord2_thread(input_list, groundtruth_dir, pdbbind_dir,
     
 def srand_data_load_save_coord2(input_list, groundtruth_dir, pdbbind_dir, output_dir, resolution, bond_th, pocket_th, iteration, thread_num = 1):
     tile_size = 1024
-    print("srand_data_load_save_coord2")
+    #print("srand_data_load_save_coord2")
 
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
@@ -73,7 +73,7 @@ def srand_data_load_save_coord2(input_list, groundtruth_dir, pdbbind_dir, output
     if not os.path.isdir(output_dir+'/test'):
         os.makedirs(output_dir+'/test')
 
-    print("data dir created!")
+    #print("data dir created!")
     if thread_num == 1:
         srand_data_load_save_coord2_thread(input_list, groundtruth_dir, pdbbind_dir, output_dir, resolution, bond_th, pocket_th, iteration, 1, 0)
     else:
@@ -90,7 +90,7 @@ def srand_data_load_save_coord2(input_list, groundtruth_dir, pdbbind_dir, output
         output_dir_tmp = output_dir + '_tmp_' + str(thread_id)
         for split in ['train', 'test']:
             dataset_file_list = os.listdir(output_dir_tmp+'/'+split)
-            print(dataset_file_list)
+            #print(dataset_file_list)
             n = len(dataset_file_list) // 3
             file_num = len(os.listdir(output_dir+'/'+split)) // 3
             for j in range(file_num, file_num + n):
@@ -122,6 +122,6 @@ if __name__ == "__main__":
     thread_num = args.thread_num
     use_new = args.use_new_data
     screen_data = args.screen_data
-    print(cv, iteration, output_file, start, end, thread_num, use_new)
+    #print(cv, iteration, output_file, start, end, thread_num, use_new)
     srand_data_load_save_coord2(input_list, groundtruth_dir, pdbbind_dir, output_dir, resolution, bond_th, pocket_th, iteration, thread_num = thread_num)
 

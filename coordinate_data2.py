@@ -116,9 +116,9 @@ def read_pdbbind_to_disk_rmsd_energy_split(input_list, groundtruth_dir, groundtr
     decoys_n = []
     actives_lists = []
     decoys_lists = []
-    print("before Atom type count")
-    print("total atoms: " + str(len(Atoms)))
-    print(Atoms)
+    #print("before Atom type count")
+    #print("total atoms: " + str(len(Atoms)))
+    #print(Atoms)
 
     """Generate 3D data files"""
 
@@ -152,5 +152,5 @@ def read_pdbbind_to_disk_rmsd_energy_split(input_list, groundtruth_dir, groundtr
     pbar.close()
 
 
-    print("3D data generated")
-    print("total " + str(global_tot) + " poses generated")
+    #print("3D data generated")
+    #print("total " + str(global_tot) + " poses generated")

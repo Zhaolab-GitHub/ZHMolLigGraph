@@ -89,23 +89,27 @@ python ZHMolLigGraph.py  -h
 ```
 to view the full command-line help and argument descriptions.
 
+```
 optional arguments:
-  -h, --help            show this help message and exit
-  --gpu_id GPU_ID       GPU device ID
+  -h, --help
+      show this help message and exit
+  --gpu_id GPU_ID
+      GPU device ID
   --ligand_file LIGAND_FILE
-                        input ligand file
+      input ligand file
   --nucleic_file NUCLEIC_FILE
-                        input nucleic file
+      input nucleic acid structure file
   --pose_file POSE_FILE
-                        input docked pose / complex file
+      input docked pose / complex file
   --output_file OUTPUT_FILE
-                        output file of the ligand, should be given as an output prefix rather than a full filename.
+      output prefix for the ligand result files; should be given as a prefix rather than a full filename
   --prediction_model PREDICTION_MODEL
-                        path to the pose prediction model
+      path to the pose prediction model
   --selection_model SELECTION_MODEL
-                        path to the pose selection model
-  --tmp_dir TMP_DIR     temporary directory for ZHMolLigGraph processing
-
+      path to the pose selection model
+  --tmp_dir TMP_DIR
+      temporary directory for ZHMolLigGraph processing
+```
 
 ### Output files
 For an input complex such as `298D`, the program writes:

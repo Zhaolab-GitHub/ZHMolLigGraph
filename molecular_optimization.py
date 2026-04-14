@@ -104,8 +104,8 @@ def get_refined_pose_file(mol2_file, output_mol2_file, ligand):
 		for line in lines:
 			f.write(line)
 
-	os.system('obminimize tmp_mol.mol2 > tmp_mol.pdb')
-	os.system(f'obabel -ipdb tmp_mol.pdb -omol2 -O {output_mol2_file}')
+	os.system('obminimize tmp_mol.mol2 > tmp_mol.pdb 2>/dev/null')
+	os.system(f'obabel -ipdb tmp_mol.pdb -omol2 -O {output_mol2_file} 2>/dev/null')
 	os.system('rm tmp_mol.mol2')
 	os.system('rm tmp_mol.pdb')
 	#os.system(f'mv tmp_mol.mol2 {output_mol2_file}')

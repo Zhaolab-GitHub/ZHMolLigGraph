@@ -1,4 +1,4 @@
-# [ZHMolLigGraphh](http://zhaoserver.com.cn/ZHmol-LigGraph/ZHmol-LigGraph.html)
+# [ZHMolLigGraph](http://zhaoserver.com.cn/ZHMolLigGraph/ZHMolLigGraph.html)
 
 ## Overview of ZHMolLigGraph: 
 **Exploring ligand flexibility in nucleic acid scaffolds using graph neural networks** 
@@ -46,25 +46,77 @@ pip install torchvision==0.8.2
 ```
 
 ## Data & Pretrained Models
-* Data Files​​: Available at at [Zenodo](https://zenodo.org/records/17097553)
+* Data Files​​: Available at [Zenodo](https://zenodo.org/records/17097553)
 * Pretrained Models​​: Download prediction_model.pt and selection_model.pt from [Zenodo](https://zenodo.org/records/17097553) and place them in models/ directory.
 
+### Workflow
+1. Prepare the receptor structure, ligand structure, and an initial docked pose.
+2. Run `ZHMolLigGraph.py` with the required input files and pretrained models.
+3. The program performs flexibility exploration and feasibility selection.
+4. Refined poses and prediction scores are written to the output directory.
+
 ## Usage
+```
+usage: ZHMolLigGraph.py [-h] [--gpu_id GPU_ID] [--ligand_file LIGAND_FILE] [--nucleic_file NUCLEIC_FILE] [--pose_file POSE_FILE]
+                        [--output_file OUTPUT_FILE] [--prediction_model PREDICTION_MODEL] [--selection_model SELECTION_MODEL]
+                        [--tmp_dir TMP_DIR]
+```
+                  
 Example files are provided in the data/ directory.
 
-For any nucleic acid-ligand complex structure (single or multiple inputs), place the nucleic acid file as native/XX.rec.pdb, the ligand file as native/XX.lig.mol2, and the complex file as before_dock/XX.pdb.
+### Required input files
+For each nucleic acid–ligand complex, the following three input files are required:
 
-Then, simply run the following command:
+- `--nucleic_file`: receptor structure in PDB format (e.g., `data/native/298D.rec.pdb`)
+- `--ligand_file`: ligand structure in MOL2 format (e.g., `data/native/298D.lig.mol2`)
+- `--pose_file`: initial docked complex / input pose in PDB format to be refined (e.g., `data/before_dock/298D.pdb`)
+
+Run the following command using 298D as an example:
 
 ```
-bash run_ZHmol-LigGraph.sh
+python ZHMolLigGraph.py \
+  --ligand_file=data/native/298D.lig.mol2 \
+  --nucleic_file=data/native/298D.rec.pdb \
+  --pose_file=data/before_dock/298D.pdb \
+  --output_file=data/after_dock/298D \
+  --prediction_model=models/prediction_model.pt \
+  --selection_model=models/selection_model.pt \
+  --tmp_dir=ZHMolLigGraph_tmp/
 ```
+You can run
+```
+python ZHMolLigGraph.py  -h
+```
+to view the full command-line help and argument descriptions.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --gpu_id GPU_ID       GPU device ID
+  --ligand_file LIGAND_FILE
+                        input ligand file
+  --nucleic_file NUCLEIC_FILE
+                        input nucleic file
+  --pose_file POSE_FILE
+                        input docked pose / complex file
+  --output_file OUTPUT_FILE
+                        output file of the ligand, should be given as an output prefix rather than a full filename.
+  --prediction_model PREDICTION_MODEL
+                        path to the pose prediction model
+  --selection_model SELECTION_MODEL
+                        path to the pose selection model
+  --tmp_dir TMP_DIR     temporary directory for ZHMolLigGraph processing
 
 
-### Output
-Results are saved in data/after_dock/ as:
-* .mol2 files (the obtained complex structures)
-* .txt file (the probability to accept/reject decision (0-1))
+### Output files
+For an input complex such as `298D`, the program writes:
+
+- `data/after_dock/298D.mol2`: refined ligand pose(s)
+- `data/after_dock/298D.txt`: acceptance/rejection probability for the generated pose(s)
+
+Temporary files are written to the directory specified by `--tmp_dir`.
+
+### Runtime note
+The neural-network inference step is relatively fast. In the current pipeline, the most time-consuming step is the Open Babel–based conformational optimization / minimization during pose generation and refinement. Therefore, total runtime depends strongly on the number of poses processed and on the available CPU/GPU hardware.
 
 ## Contact
 If you have any comments, questions or suggestions about the ZHMolLigGraph, please contact:  

@@ -120,7 +120,7 @@ For an input complex such as `298D`, the program writes:
 Temporary files are written to the directory specified by `--tmp_dir`.
 
 ### Runtime note
-The neural-network inference step is relatively fast. In the current pipeline, the most time-consuming step is the Open Babel–based conformational optimization / minimization during pose generation and refinement. Therefore, total runtime depends strongly on the number of poses processed and on the available CPU/GPU hardware.
+The neural-network inference step is relatively fast. In the current pipeline, the most time-consuming step is the Open Babel-based conformational minimization after pose generation and refinement.
 
 ## Contact
 If you have any comments, questions or suggestions about the ZHMolLigGraph, please contact:  

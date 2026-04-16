@@ -30,6 +30,8 @@ conda activate ZHMolLigGraph
 ```
 
 ```
+conda install -c conda-forge openbabel=3.1.1 -y
+conda install cudatoolkit=10.2 -c pytorch -c nvidia -y
 pip install h5py==3.10.0
 pip install scipy==1.10.1
 pip install tqdm==4.66.1
@@ -43,6 +45,7 @@ pip install torch_scatter-2.0.5-cp38-cp38-linux_x86_64.whl
 pip install torch_sparse-0.6.8-cp38-cp38-linux_x86_64.whl
 pip install torch_geometric==1.6.3
 pip install torchvision==0.8.2
+pip install googledrivedownloader==0.4
 ```
 
 ## Data & Pretrained Models

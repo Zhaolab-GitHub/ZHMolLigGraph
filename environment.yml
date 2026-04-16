@@ -1,18 +1,22 @@
-name: ZHMolLigGraph
+name: 11ZHMolLigGraph
 channels:
+  - pytorch
+  - nvidia
   - defaults
 dependencies:
   - python=3.8.18
+  - cudatoolkit=10.2
   - pip
   - pip:
     - h5py==3.10.0
     - scipy==1.10.1
     - tqdm==4.66.1
     - pandas==2.0.3
-    - torch==1.7.1
-    - file:./torch_cluster-1.5.8-cp38-cp38-linux_x86_64.whl
-    - file:./torch_scatter-2.0.5-cp38-cp38-linux_x86_64.whl
-    - file:./torch_sparse-0.6.8-cp38-cp38-linux_x86_64.whl
-    - torch-geometric==1.6.3
-    - torchvision==0.8.2
     - googledrivedownloader==0.4
+    - torch==1.7.1+cu101 --find-links https://download.pytorch.org/whl/torch_stable.html
+    - torchvision==0.8.2+cu101 --find-links https://download.pytorch.org/whl/torch_stable.html
+    - torch-scatter -f https://data.pyg.org/whl/torch-1.7.1+cu101.html
+    - torch-sparse -f https://data.pyg.org/whl/torch-1.7.1+cu101.html
+    - torch-cluster -f https://data.pyg.org/whl/torch-1.7.1+cu101.html
+    - torch-spline-conv -f https://data.pyg.org/whl/torch-1.7.1+cu101.html
+    - torch-geometric==1.6.3
